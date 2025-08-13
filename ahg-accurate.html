@@ -882,13 +882,15 @@
         /* Salesforce Chat Widget Mobile Overrides */
         @media (max-width: 768px) {
             .embeddedMessagingFrame {
-                max-height: calc(100vh - 80px) !important;
+                max-height: 280px !important;
+                height: 280px !important;
                 top: auto !important;
                 bottom: 20px !important;
             }
             
             .embeddedMessagingConversationDialog {
-                max-height: 400px !important;
+                max-height: 280px !important;
+                height: 280px !important;
             }
         }
     </style>
@@ -1123,12 +1125,12 @@
                 
                 // Set responsive height based on viewport
                 if (window.innerWidth <= 768) {
-                    // Mobile: shorter height to avoid navbar overlap
-                    embeddedservice_bootstrap.settings.widgetHeight = '400px';
+                    // Mobile: much shorter height to avoid navbar overlap
+                    embeddedservice_bootstrap.settings.widgetHeight = '280px';
                     embeddedservice_bootstrap.settings.widgetWidth = '320px';
                 } else if (window.innerWidth <= 1024) {
-                    // Tablet
-                    embeddedservice_bootstrap.settings.widgetHeight = '450px';
+                    // Tablet: also shorter
+                    embeddedservice_bootstrap.settings.widgetHeight = '350px';
                     embeddedservice_bootstrap.settings.widgetWidth = '350px';
                 }
                 // Desktop uses default Salesforce height
