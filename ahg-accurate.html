@@ -893,6 +893,21 @@
                 height: 480px !important;
             }
         }
+        
+        /* Hide file attachment button */
+        .embeddedMessagingFileUpload,
+        .embeddedMessagingFileUploadButton,
+        button[aria-label*="attach"],
+        button[aria-label*="Attach"],
+        button[aria-label*="file"],
+        button[aria-label*="File"],
+        .slds-button_icon[title*="attach"],
+        .slds-button_icon[title*="Attach"],
+        [data-key="attachFile"],
+        [data-key="attach_file"] {
+            display: none !important;
+            visibility: hidden !important;
+        }
     </style>
 </head>
 <body>
