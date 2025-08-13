@@ -1123,6 +1123,10 @@
             try {
                 embeddedservice_bootstrap.settings.language = 'en_US';
                 
+                // Disable file attachments
+                embeddedservice_bootstrap.settings.enabledFeatures = ['LiveAgent'];
+                embeddedservice_bootstrap.settings.disableFileTransfer = true;
+                
                 // Set responsive height based on viewport
                 if (window.innerWidth <= 768) {
                     // Mobile: much shorter height to avoid navbar overlap
