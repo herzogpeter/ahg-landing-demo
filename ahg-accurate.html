@@ -894,22 +894,21 @@
             }
         }
         
-        /* Hide file attachment button */
+        /* Hide file attachment button completely */
+        .fileAttachmentButtonWrapper,
+        embeddedmessaging-file-attachment-footer,
         .fileAttachmentButton,
+        .fileAttachmentButtonLabel,
+        .fileAttachmentButtonInput,
+        .slds-file-selector,
+        .slds-file-selector_files,
         .slds-file-selector__button,
+        .slds-file-selector__body,
+        .slds-file-selector__input,
         .paperClipIconSvg,
         span[title="Attach file"],
         span[title*="Attach"],
-        .embeddedMessagingFileUpload,
-        .embeddedMessagingFileUploadButton,
-        button[aria-label*="attach"],
-        button[aria-label*="Attach"],
-        button[aria-label*="file"],
-        button[aria-label*="File"],
-        .slds-button_icon[title*="attach"],
-        .slds-button_icon[title*="Attach"],
-        [data-key="attachFile"],
-        [data-key="attach_file"] {
+        label[for*="fileAttachmentButtonInput"] {
             display: none !important;
             visibility: hidden !important;
             pointer-events: none !important;
@@ -917,6 +916,8 @@
             width: 0 !important;
             height: 0 !important;
             overflow: hidden !important;
+            position: absolute !important;
+            left: -9999px !important;
         }
     </style>
 </head>
