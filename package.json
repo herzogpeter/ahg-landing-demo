@@ -1,0 +1,12 @@
+{
+  "name": "american-hartford-gold-demo",
+  "version": "1.0.0",
+  "description": "American Hartford Gold landing page demos",
+  "scripts": {
+    "start": "python3 server.py",
+    "deploy": "vercel --prod"
+  },
+  "keywords": ["landing-page", "demo"],
+  "author": "",
+  "license": "ISC"
+}

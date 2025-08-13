@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>American Hartford Gold - Trusted Leader in Precious Metals</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        /* Header Styles */
+        .header {
+            background: #1e3a5f;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-section img {
+            height: 45px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #FFD700;
+        }
+
+        .cta-nav-button {
+            background: #FFD700;
+            color: #1e3a5f !important;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .cta-nav-button:hover {
+            background: #FFA500;
+            transform: translateY(-1px);
+        }
+
+        .phone-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+        }
+
+        .phone-section .phone-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            opacity: 0.9;
+        }
+
+        .phone-section .phone-number {
+            font-size: 20px;
+            font-weight: bold;
+            color: #FFD700;
+        }
+
+        /* Price Ticker Bar */
+        .price-ticker {
+            background: #f8f9fa;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 10px 0;
+        }
+
+        .ticker-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        .metal-price {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+
+        .metal-name {
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .price-value {
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .price-change {
+            font-size: 12px;
+        }
+
+        .price-change.positive {
+            color: #28a745;
+        }
+
+        .price-change.negative {
+            color: #dc3545;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f5f5dc 0%, #e8dcc0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            padding: 60px 20px;
+            align-items: center;
+        }
+
+        .hero-left {
+            position: relative;
+        }
+
+        .safe-image {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(145deg, #2c2c2c, #1a1a1a);
+            border-radius: 20px;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .safe-image::before {
+            content: '🔒';
+            font-size: 120px;
+            color: #FFD700;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
+        }
+
+        .free-badge {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            background: #dc3545;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50%;
+            font-size: 18px;
+            font-weight: bold;
+            transform: rotate(15deg);
+            box-shadow: 0 5px 15px rgba(220,53,69,0.4);
+        }
+
+        .hero-text {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            color: #dc3545;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .hero-text .subtitle {
+            font-size: 22px;
+            color: #1e3a5f;
+            margin-bottom: 20px;
+        }
+
+        .safe-features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .safe-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #1e3a5f;
+        }
+
+        .safe-feature::before {
+            content: '✓';
+            background: #28a745;
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .offer-badge {
+            background: #1e3a5f;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .hero-right {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .guide-form {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border: 2px solid #FFD700;
+            position: relative;
+        }
+
+        .form-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #FFD700;
+            color: #1e3a5f;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .guide-form h2 {
+            color: #dc3545;
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .guide-form .form-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .form-benefits {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            font-size: 13px;
+        }
+
+        .form-benefits span {
+            color: #28a745;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #FFD700;
+            box-shadow: 0 0 0 2px rgba(255,215,0,0.2);
+        }
+
+        .submit-button {
+            width: 100%;
+            background: #FFD700;
+            color: #1e3a5f;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+
+        .submit-button:hover {
+            background: #FFA500;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,215,0,0.4);
+        }
+
+        .book-image {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .book-cover {
+            width: 200px;
+            height: 260px;
+            background: linear-gradient(135deg, #1e3a5f, #2c4d7a);
+            border-radius: 10px;
+            margin: 0 auto;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+        }
+
+        .book-cover .year {
+            font-size: 36px;
+            font-weight: bold;
+            color: #FFD700;
+            margin-bottom: 10px;
+        }
+
+        .book-cover .title {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .book-cover::after {
+            content: '🪙';
+            position: absolute;
+            bottom: 20px;
+            font-size: 60px;
+            opacity: 0.3;
+        }
+
+        /* Trust Badges */
+        .trust-section {
+            background: white;
+            padding: 20px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .trust-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            padding: 0 20px;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .badge-logo {
+            width: 40px;
+            height: 40px;
+            background: #f0f0f0;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .badge-text {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .badge-text strong {
+            display: block;
+            color: #333;
+            font-size: 14px;
+        }
+
+        /* I WANT TO Section */
+        .want-section {
+            background: #1e3a5f;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .want-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .want-text {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            margin-right: 20px;
+            display: inline-block;
+        }
+
+        .want-dropdown {
+            padding: 12px 30px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background: white;
+            color: #333;
+            cursor: pointer;
+        }
+
+        /* Video Section */
+        .video-section {
+            padding: 60px 20px;
+            background: #f8f9fa;
+        }
+
+        .video-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .video-content h2 {
+            font-size: 36px;
+            color: #1e3a5f;
+            margin-bottom: 20px;
+        }
+
+        .video-content p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .video-placeholder {
+            background: #1e3a5f;
+            border-radius: 10px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+            background: white;
+        }
+
+        .play-button::before {
+            content: '▶';
+            font-size: 30px;
+            color: #1e3a5f;
+            margin-left: 5px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #FFD700;
+        }
+
+        .footer-disclaimer {
+            font-size: 12px;
+            color: #999;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 968px) {
+            .hero-container,
+            .video-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .trust-container {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo-section">
+                <img src="american-hartford-gold-logo.svg" alt="American Hartford Gold">
+            </div>
+            <nav>
+                <a href="#">PRODUCTS</a>
+                <a href="#">GOLD IRA</a>
+                <a href="#">NEWS & RESOURCES</a>
+                <a href="#">ABOUT US</a>
+                <a href="#" class="cta-nav-button">OPEN A GOLD IRA</a>
+            </nav>
+            <div class="phone-section">
+                <div>
+                    <div class="phone-label">SPEAK WITH A SPECIALIST</div>
+                    <div class="phone-number">800-462-0071</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Price Ticker -->
+    <div class="price-ticker">
+        <div class="ticker-container">
+            <div class="metal-price">
+                <span class="metal-name">SILVER</span>
+                <span class="price-value">$37.78</span>
+                <span class="price-change positive">+0.08 +0.21%</span>
+            </div>
+            <div class="metal-price">
+                <span class="metal-name">PLATINUM</span>
+                <span class="price-value">$1,336.80</span>
+                <span class="price-change negative">-2.60 -0.20%</span>
+            </div>
+            <div class="metal-price">
+                <span class="metal-name">GOLD</span>
+                <span class="price-value">$3,349.43</span>
+                <span class="price-change positive">+3.69 +0.11%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-left">
+                <div class="hero-text">
+                    <h1>FREE SAFE!</h1>
+                    <div class="subtitle">ON QUALIFYING ORDERS*</div>
+                </div>
+                <div class="safe-image">
+                    <div class="free-badge">FREE!</div>
+                </div>
+                <div class="safe-features">
+                    <div class="safe-feature">DIGITAL LOCK</div>
+                    <div class="safe-feature">SPACIOUS INTERIOR</div>
+                    <div class="safe-feature">INTERIOR ORGANIZATION</div>
+                </div>
+                <div style="text-align: center; margin-top: 20px;">
+                    <div class="offer-badge">LIMITED TIME OFFER</div>
+                    <br>
+                    <button class="submit-button" style="width: auto; padding: 12px 30px;">Claim Your Safe</button>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="guide-form">
+                    <div class="form-badge">⚡ LIMITED TIME OFFER</div>
+                    <h2>Get Your FREE Gold IRA Info Guide</h2>
+                    <p class="form-subtitle">Plus receive up to $10,000 in FREE silver on qualifying purchases</p>
+                    <div class="form-benefits">
+                        <span>✓ No obligation</span>
+                        <span>✓ Expert guidance</span>
+                        <span>✓ Instant download</span>
+                    </div>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="First Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Last Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone Number" required>
+                        </div>
+                        <button type="submit" class="submit-button">GET YOUR FREE GUIDE</button>
+                    </form>
+                </div>
+                <div class="book-image">
+                    <div class="book-cover">
+                        <div class="year">2025</div>
+                        <div class="title">Information Guide</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="trust-section">
+        <div class="trust-container">
+            <div class="trust-badge">
+                <div class="badge-logo">BBB</div>
+                <div class="badge-text">
+                    <strong>A+</strong>
+                    Better Business Bureau
+                </div>
+            </div>
+            <div class="trust-badge">
+                <div class="badge-logo">⭐</div>
+                <div class="badge-text">
+                    <strong>Trustpilot</strong>
+                    12,000+ Reviews
+                </div>
+            </div>
+            <div class="trust-badge">
+                <div class="badge-logo">✓</div>
+                <div class="badge-text">
+                    <strong>Consumer Affairs</strong>
+                    5 Star Rating
+                </div>
+            </div>
+            <div class="trust-badge">
+                <div class="badge-logo">INC</div>
+                <div class="badge-text">
+                    <strong>Multi-Year Winner</strong>
+                    Inc. 5000
+                </div>
+            </div>
+            <div class="trust-badge">
+                <div class="badge-logo">$</div>
+                <div class="badge-text">
+                    <strong>Buyback Commitment</strong>
+                    Guaranteed
+                </div>
+            </div>
+            <div class="trust-badge">
+                <div class="badge-logo">🛡️</div>
+                <div class="badge-text">
+                    <strong>Price Protection</strong>
+                    Guarantee
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- I Want To Section -->
+    <section class="want-section">
+        <div class="want-container">
+            <span class="want-text">I WANT TO</span>
+            <select class="want-dropdown">
+                <option>Choose An Option</option>
+                <option>Open a Gold IRA</option>
+                <option>Buy Physical Gold</option>
+                <option>Buy Physical Silver</option>
+                <option>Rollover My 401(k)</option>
+                <option>Get a Free Info Kit</option>
+                <option>Speak with a Specialist</option>
+            </select>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="video-container">
+            <div class="video-content">
+                <h2>About American Hartford Gold</h2>
+                <p>American Hartford Gold (AHG) the leading Gold & Silver Specialists that helps individuals and families diversify and protect their wealth with precious metals. Through our website, publications and expert Product Specialists, American Hartford Gold offers a wealth of precious metals products to help you diversify and protect your wealth over the long term including gold and silver coins, plus our industry leading Gold IRA program.</p>
+                <p>We pride ourselves on providing exceptional customer service, transparent pricing, and expert guidance to help you make informed decisions about your precious metals investments.</p>
+            </div>
+            <div class="video-placeholder">
+                <div class="play-button"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Careers</a>
+                <a href="#">FAQ</a>
+                <a href="#">Shipping Policy</a>
+                <a href="#">Returns</a>
+            </div>
+            <div class="footer-disclaimer">
+                © 2024 American Hartford Gold. All Rights Reserved.<br>
+                Important Disclosure: Precious metals are speculative investments which may experience short-term and long-term price volatility. Past performance is not indicative of future results. American Hartford Gold does not provide investment, legal, retirement planning, or tax advice. Consult with your investment advisor, attorney, retirement planner, or tax advisor before making any investment decisions.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Salesforce Agentforce Embedded Messaging -->
+    <script type='text/javascript'>
+        function initEmbeddedMessaging() {
+            try {
+                embeddedservice_bootstrap.settings.language = 'en_US';
+
+                embeddedservice_bootstrap.init(
+                    '00DgL000004Ss9d',
+                    'Web_Inquiries',
+                    'https://orgfarm-b50a197801-dev-ed.develop.my.site.com/ESWWebInquiries1754683767882',
+                    {
+                        scrt2URL: 'https://orgfarm-b50a197801-dev-ed.develop.my.salesforce-scrt.com'
+                    }
+                );
+            } catch (err) {
+                console.error('Error loading Embedded Messaging: ', err);
+            }
+        };
+    </script>
+    <script type='text/javascript' src='https://orgfarm-b50a197801-dev-ed.develop.my.site.com/ESWWebInquiries1754683767882/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+</body>
+</html>
