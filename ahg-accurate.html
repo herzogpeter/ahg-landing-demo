@@ -577,24 +577,305 @@
             line-height: 1.6;
         }
 
-        @media (max-width: 968px) {
-            .hero-container,
-            .video-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
+        /* Mobile Menu Button */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            padding: 5px;
+        }
 
-            .hero h1 {
-                font-size: 36px;
+        .mobile-menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .phone-section {
+                display: none;
+            }
+            
+            .hero-container {
+                padding: 40px 20px;
+            }
+            
+            .safe-image {
+                width: 350px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 968px) {
+            /* Navigation */
+            .mobile-menu-toggle {
+                display: block;
             }
 
             nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #1e3a5f;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                padding: 10px;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .cta-nav-button {
+                margin-top: 10px;
+            }
+
+            /* Hero Section */
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 30px 15px;
+            }
+
+            .hero-text h1 {
+                font-size: 36px;
+            }
+
+            .hero-text .subtitle {
+                font-size: 18px;
+            }
+
+            .safe-image {
+                width: 280px;
+                height: 280px;
+            }
+
+            .safe-image::before {
+                font-size: 80px;
+            }
+
+            .free-badge {
+                top: -10px;
+                right: -10px;
+                padding: 12px 20px;
+                font-size: 16px;
+            }
+
+            /* Form Section */
+            .guide-form {
+                padding: 20px;
+            }
+
+            .guide-form h2 {
+                font-size: 20px;
+            }
+
+            .form-benefits {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            /* Video Section */
+            .video-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .video-placeholder {
+                height: 250px;
+            }
+
+            .video-content h2 {
+                font-size: 28px;
+            }
+
+            /* Trust Badges */
+            .trust-container {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .trust-badge {
+                flex: 1 1 calc(50% - 20px);
+                min-width: 140px;
+            }
+
+            /* Price Ticker */
+            .ticker-container {
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+
+            .metal-price {
+                font-size: 12px;
+            }
+
+            /* Footer */
+            .footer-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            /* Header */
+            .nav-container {
+                padding: 10px 15px;
+            }
+
+            .logo-section img {
+                height: 35px;
+            }
+
+            /* Hero Section */
+            .hero-text h1 {
+                font-size: 28px;
+            }
+
+            .hero-text .subtitle {
+                font-size: 16px;
+            }
+
+            .safe-features {
                 flex-direction: column;
                 gap: 15px;
             }
 
-            .trust-container {
-                flex-wrap: wrap;
+            .safe-feature {
+                font-size: 12px;
+            }
+
+            /* Form */
+            .guide-form {
+                padding: 15px;
+                border-radius: 10px;
+            }
+
+            .form-badge {
+                font-size: 10px;
+                padding: 4px 15px;
+            }
+
+            .guide-form h2 {
+                font-size: 18px;
+            }
+
+            .guide-form .form-subtitle {
+                font-size: 12px;
+            }
+
+            .form-group input {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            .submit-button {
+                padding: 12px;
+                font-size: 14px;
+            }
+
+            /* Book Cover */
+            .book-cover {
+                width: 150px;
+                height: 200px;
+            }
+
+            .book-cover .year {
+                font-size: 28px;
+            }
+
+            /* Trust Section */
+            .trust-badge {
+                flex: 1 1 100%;
+                justify-content: center;
+            }
+
+            /* Want Section */
+            .want-text {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .want-dropdown {
+                width: 90%;
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            /* Video Section */
+            .video-section {
+                padding: 40px 15px;
+            }
+
+            .video-content h2 {
+                font-size: 24px;
+            }
+
+            .video-content p {
+                font-size: 14px;
+            }
+
+            .video-placeholder {
+                height: 200px;
+            }
+
+            .play-button {
+                width: 60px;
+                height: 60px;
+            }
+
+            /* Footer */
+            .footer {
+                padding: 30px 15px;
+            }
+
+            .footer-disclaimer {
+                font-size: 11px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Hero */
+            .hero-text h1 {
+                font-size: 24px;
+            }
+
+            .safe-image {
+                width: 240px;
+                height: 240px;
+            }
+
+            .safe-image::before {
+                font-size: 60px;
+            }
+
+            /* Price Ticker */
+            .price-ticker {
+                padding: 8px 0;
+            }
+
+            .ticker-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .metal-price {
+                width: 100%;
+                justify-content: center;
             }
         }
     </style>
@@ -606,7 +887,12 @@
             <div class="logo-section">
                 <img src="american-hartford-gold-logo.svg" alt="American Hartford Gold">
             </div>
-            <nav>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="mobile-nav">
                 <a href="#">PRODUCTS</a>
                 <a href="#">GOLD IRA</a>
                 <a href="#">NEWS & RESOURCES</a>
@@ -797,6 +1083,24 @@
             </div>
         </div>
     </footer>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        function toggleMobileMenu() {
+            const nav = document.getElementById('mobile-nav');
+            nav.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('mobile-nav');
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (!nav.contains(event.target) && !menuToggle.contains(event.target)) {
+                nav.classList.remove('active');
+            }
+        });
+    </script>
 
     <!-- Salesforce Agentforce Embedded Messaging -->
     <script type='text/javascript'>
